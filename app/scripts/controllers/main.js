@@ -9,7 +9,7 @@
  */
 angular.module('assetbookApp')
   .controller('MainCtrl', function ($scope,gitService) {
-      $scope.demo = "Hi";
+      $scope.issues = null;
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -18,7 +18,8 @@ angular.module('assetbookApp')
  debugger;
   gitService.getIssues().then(addGroupSuccess)
 
- function addGroupSuccess(data) {
+  function addGroupSuccess(data) {
+      $scope.issues = data;
             console.log(data);
 			};
 
