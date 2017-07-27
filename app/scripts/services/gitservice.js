@@ -22,7 +22,7 @@ angular.module('assetbookApp')
 
           /*GET ALL GROUPS*/
           function getIssues() {
-var opts = {data : '', page :'', username :'',repo:'',state:''};
+            var opts = {data : '', page :'', username :'',repo:'',state:''};
 			opts.data = opts.data || [];
     		opts.page = opts.page || 1;
     		opts.username = 'aurelia';
