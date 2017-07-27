@@ -11,6 +11,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   padding: 0;
 }
 
@@ -36,6 +37,177 @@ body {
   }
 }
 
+ .repohead.experiment-repo-nav {
+    padding-bottom: 0;
+    background-color: #fafbfc;
+}
+
+.pagehead {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e1e4e8;
+}
+.repohead .repohead-details-container {
+    margin-bottom: 20px;
+}
+.pagehead ul.pagehead-actions {
+    position: relative;
+    z-index: 31;
+    float: right;
+    margin: 0;
+}
+.repohead h1 {
+    position: relative;
+    float: left;
+    max-width: 635px;
+    padding-left: 18px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #586069;
+}
+.starring-container.on .unstarred, .starring-container .starred {display: none;}
+.btn-sm {
+    padding: 3px 10px!important;
+    font-size: 12px!important;
+    line-height: 20px;
+}
+.btn {
+    color: #24292e;
+    background-color: #eff3f6;
+    background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+.select-menu-button::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: -2px;
+    content: "";
+    border: 4px solid;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+.repohead h1 .octicon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+    color: #959da5;
+}
+.reponav-item {
+    float: left;
+    padding: 7px 15px 8px;
+    color: #586069;
+    white-space: nowrap;
+    border: solid transparent;
+    border-width: 3px 1px 1px;
+    border-radius: 3px 3px 0 0;
+}
+.reponav-item .Counter {
+    color: #444d56;
+}
+
+.Counter {
+    display: inline-block;
+    padding: 2px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    color: #586069;
+    background-color: rgba(27,31,35,0.08);
+    border-radius: 20px;
+}
+.reponav-item .octicon {
+    color: rgba(27,31,35,0.3);
+}
+.repohead h1 {
+    position: relative;
+    float: left;
+    max-width: 635px;
+    padding-left: 18px;
+    font-size: 18px!important;
+    line-height: 26px;
+    color: #586069;
+}
+.social-count {
+    float: left;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #24292e;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid rgba(27,31,35,0.2);
+    border-left: 0;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,0.2);
+    border-radius: 0.25em;
+    -webkit-appearance: none;}
+.btn-with-count {
+    float: left;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.pagehead-actions .select-menu-modal-holder {
+    top: 100%;
+}
+
+.select-menu-modal-holder {
+    position: absolute;
+    z-index: 30;
+    display: none;
+}
+.pagehead-actions>li {
+    float: left;
+    margin: 0 10px 0 0;
+    font-size: 11px;
+    color: #24292e;
+    list-style-type: none;
+}
+.pagehead h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 28px;
+}
+.btn .octicon {
+    vertical-align: text-top;
+}
+.octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
+.octicon {
+    vertical-align: text-bottom;
+}
+.reponav-item:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
+.reponav-item.selected{color:#24292e;background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
+/*end*/
 /* Custom page footer */
 .footer {
   padding-top: 19px;
@@ -59,7 +231,18 @@ body {
 .float-right {
     float: right !important;
 }
-
+.site-footer .octicon-mark-github:hover {
+    color: #959da5;
+}
+a {
+    color: #0366d6;}
+.site-footer .octicon-mark-github {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    margin-left: -12px;
+    font-size: 24px;
+    color: #c6cbd1;}
 .site-footer-links {
     margin: 0;
     list-style: none;
@@ -72,11 +255,20 @@ body {
     font-size: 24px;
     color: #c6cbd1;
 }
-
+ul, ol {
+    padding-left: 0;}
 .container-narrow > hr {
   margin: 30px 0;
 }
 
+.site-footer-links li+li {
+    margin-left: 10px;
+}
+.container-lg {
+    max-width: 1012px;
+    margin-right: auto;
+    margin-left: auto;
+}
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
@@ -100,8 +292,11 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
+  .container { 
+       width: 980px;
+        margin-right: auto;
+    margin-left: auto;
+    /*max-width: 730px;*/
   }
 
   /* Remove the padding we set earlier */
