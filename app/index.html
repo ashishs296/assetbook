@@ -46,13 +46,16 @@
         </div>
       </div>
     </div>
-
+      <div class="header">
+          <div ng-include="'common/header.html'">
+          </div>
+      </div>
     <div class="container">
     <div ng-view=""></div>
     </div>
 
     <div class="footer">
-      <div class="container" ng-include="'common/footer.html'">
+      <div  ng-include="'common/footer.html'">
       </div> 
     </div>
 
