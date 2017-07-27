@@ -1,3 +1,5 @@
+@import "../partials/footer";
+@import "../partials/header.scss";
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -36,118 +38,8 @@ body {
     padding-bottom: 19px;
   }
 }
-
- .repohead.experiment-repo-nav {
-    padding-bottom: 0;
-    background-color: #fafbfc;
-}
-
-.pagehead {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #e1e4e8;
-}
-.repohead .repohead-details-container {
-    margin-bottom: 20px;
-}
-.pagehead ul.pagehead-actions {
-    position: relative;
-    z-index: 31;
-    float: right;
-    margin: 0;
-}
-.repohead h1 {
-    position: relative;
-    float: left;
-    max-width: 635px;
-    padding-left: 18px;
-    font-size: 18px;
-    line-height: 26px;
-    color: #586069;
-}
-.starring-container.on .unstarred, .starring-container .starred {display: none;}
-.btn-sm {
-    padding: 3px 10px!important;
-    font-size: 12px!important;
-    line-height: 20px;
-}
 .btn {
-    color: #24292e;
-    background-color: #eff3f6;
-    background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
-    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
-}
-.select-menu-button::after {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    vertical-align: -2px;
-    content: "";
-    border: 4px solid;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-}
-.repohead h1 .octicon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 5px;
-    color: #959da5;
-}
-.reponav-item {
-    float: left;
-    padding: 7px 15px 8px;
-    color: #586069;
-    white-space: nowrap;
-    border: solid transparent;
-    border-width: 3px 1px 1px;
-    border-radius: 3px 3px 0 0;
-}
-.reponav-item .Counter {
-    color: #444d56;
-}
-
-.Counter {
-    display: inline-block;
-    padding: 2px 5px;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1;
-    color: #586069;
-    background-color: rgba(27,31,35,0.08);
-    border-radius: 20px;
-}
-.reponav-item .octicon {
-    color: rgba(27,31,35,0.3);
-}
-.repohead h1 {
-    position: relative;
-    float: left;
-    max-width: 635px;
-    padding-left: 18px;
-    font-size: 18px!important;
-    line-height: 26px;
-    color: #586069;
-}
-.social-count {
-    float: left;
-    padding: 3px 10px;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 20px;
-    color: #24292e;
-    vertical-align: middle;
-    background-color: #fff;
-    border: 1px solid rgba(27,31,35,0.2);
-    border-left: 0;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-.btn {
-    position: relative;
+    position: $position-relative;
     display: inline-block;
     padding: 6px 12px;
     font-size: 14px;
@@ -165,37 +57,160 @@ body {
     background-size: 110% 110%;
     border: 1px solid rgba(27,31,35,0.2);
     border-radius: 0.25em;
-    -webkit-appearance: none;}
+    -webkit-appearance: none;
+     .octicon {
+    vertical-align: text-top;
+}
+}
+
+
+.btn {
+    color: #24292e;
+    background-color: #eff3f6;
+    background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+}
+.btn-sm {
+    padding: 3px 10px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+
 .btn-with-count {
     float: left;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-.pagehead-actions .select-menu-modal-holder {
-    top: 100%;
+/*header section*/
+@mixin padding($value) {
+padding-top: $value;
+padding-bottom: $value;}
+.repohead.experiment-repo-nav {
+    padding-bottom: $repohead-experiment-repo-nav-padding-bottom;
+    background-color:$repohead-experiment-repo-nav-background-color;
 }
 
+.pagehead {
+    position: $position-relative;
+    @include padding($pagehead-padding); 
+    margin-bottom: $pagehead-margin-bottom;
+    border-bottom: $pagehead--bottom;
+           ul.pagehead-actions {
+                  position: $position-relative;
+                  z-index: $pagehead-ul-pagehead-actions-z-index;
+                  float: $pagehead-ul-pagehead-actions-float;
+                  margin: $margin-zero;
+                }
+           h1 {
+                 margin-top: $margin-top-zero;
+                 margin-bottom: $margin-bottom-zero;
+                 font-size: 20px;
+                 font-weight: normal;
+                 line-height: 28px;
+                }
+}
+
+
+
+.starring-container.on .unstarred, .starring-container .starred {display: none;}
+
+.select-menu-button::after {
+    display:$select-menu-button-after-display;
+    width: $select-menu-button-after-width;
+    height: $select-menu-button-after-height;
+    vertical-align: $select-menu-button-after-vertical-align;
+    content:$select-menu-button-after-content;
+    border:$select-menu-button-after-border;
+    border-right-color: $select-menu-button-after-border-color;
+    border-bottom-color: $select-menu-button-after-border-color;
+    border-left-color: $select-menu-button-after-border-color;
+}
+
+.reponav-item {
+    float:  $float-left;
+    padding: $reponav-item-padding;
+    color: $reponav-item-color;
+    white-space: $reponav-item-white-space;
+    border:$reponav-item-border;
+    border-width: $reponav-item-border-width;
+    border-radius:$reponav-item-border-radius;
+        .Counter {
+             color: $reponav-item-Counter-color;
+        }
+        .octicon {
+                 color: $reponav-item-octicon-color;
+                    }
+}
+
+.Counter {
+    display:$Counter-display;
+    padding:$Counter-padding;
+    font-size:$Counter-font-size;
+    font-weight: $Counter-font-weight;
+    line-height: $Counter-line-height;
+    color: $Counter-color;
+    background-color:$Counter-background-color;
+    border-radius:$Counter-border-radius;
+}
+
+
+.social-count {
+    float: $float-left;
+    padding: $social-count-padding;
+    font-size: $social-count-font-size;
+    font-weight: $social-count-font-weight;
+    line-height: $social-count-font-line-height;
+    color: $social-count-font-color;
+    vertical-align: $social-count-font-vertical-align;
+    background-color: $social-count-font-background-color;
+    border: $social-count-font-border;
+    border-left:$social-count-font-border-left;
+    border-top-right-radius: $social-count-font-border-radius;
+    border-bottom-right-radius: $social-count-font-border-radius;
+}
+
+
 .select-menu-modal-holder {
-    position: absolute;
-    z-index: 30;
-    display: none;
+    position: $position-absolute;
+    z-index: $select-menu-modal-holder-z-index;
+    display: $select-menu-modal-holder-display;
 }
-.pagehead-actions>li {
-    float: left;
-    margin: 0 10px 0 0;
-    font-size: 11px;
-    color: #24292e;
-    list-style-type: none;
+.pagehead-actions{
+                >li {
+                   float: left;
+                   margin: 0 10px 0 0;
+                   font-size: 11px;
+                   color: #24292e;
+                   list-style-type: none;
+                    }
+                  .select-menu-modal-holder {
+                   top:$pagehead-actions-select-menu-modal-holder-top;
+                    }
 }
-.pagehead h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 28px;
-}
-.btn .octicon {
-    vertical-align: text-top;
+
+.repohead {
+                  h1 {
+                      position: $position-relative;
+                      float: $float-left;
+                      max-width: $repohead-h1-max-width;
+                      padding-left: $repohead-h1-padding-left;
+                      font-size: $repohead-h1-font-size;
+                      line-height: $repohead-h1-line-height;
+                      color: $repohead-h1-color;
+
+                      .octicon {
+                           position: $position-absolute;
+                           top:$repohead-h1-octicon-top;
+                           left: $repohead-h1-octicon-left;
+                           margin-top: $repohead-h1-octicon-margin-top;
+                           color:$repohead-h1-octicon-color;
+                                }
+                        }
+                 .repohead-details-container {
+                       margin-bottom: $repohead-repohead-details-container-margin-bottom;
+                           }
+
 }
 .octicon {
     display: inline-block;
@@ -208,67 +223,73 @@ body {
 .reponav-item:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
 .reponav-item.selected{color:#24292e;background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
 /*end*/
+
+
 /* Custom page footer */
+
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  padding-top:$footer-padding-top;
+  color:$footer-color;
+  border-top:$footer-border-top;
 }
-.site-footer-links li {
-    display: inline-block;
-    line-height: 16px;
+.site-footer-links{
+        li {
+             display: $site-footer-links-li-display;
+             line-height:$site-footer-links-li-line-height;
+            }
+
 }
 .site-footer {
-    position: relative;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 40px;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #586069;
-    border-top: 1px solid #eaecef;
+    position: $site-footer-position;
+    padding-top:$site-footer-padding-top;
+    padding-bottom:$site-footer-padding-bottom;
+    margin-top:$site-footer-margin-top;
+    font-size:$site-footer-font-size;
+    line-height: $site-footer-line-height;
+    color: $site-footer-color;
+    border-top:$site-footer-border-top;
+
+    .octicon-mark-github:hover 
+            {
+              color: $site-footer-octicon-mark-github-hover-color;
+            }
+    .octicon-mark-github
+            {
+              position: $site-footer-octicon-mark-github-position;
+              top: $site-footer-octicon-mark-github-top;
+              left: $site-footer-octicon-mark-github-left;
+              margin-left: $site-footer-octicon-mark-github-margin-left;
+              font-size: $site-footer-octicon-mark-github-font-size;
+              color:$site-footer-octicon-mark-github-color;
+             }
 }
 .float-right {
-    float: right !important;
+    float: $float-right-float!important;
 }
-.site-footer .octicon-mark-github:hover {
-    color: #959da5;
-}
-a {
-    color: #0366d6;}
-.site-footer .octicon-mark-github {
-    position: absolute;
-    top: 38px;
-    left: 50%;
-    margin-left: -12px;
-    font-size: 24px;
-    color: #c6cbd1;}
+
+a { color: $a-color;}
+
 .site-footer-links {
-    margin: 0;
-    list-style: none;
+    margin: $site-footer-links-margin;
+    list-style:$site-footer-links-list-style;
+    li+li
+          {
+             margin-left: $site-footer-links-li-li-margin-left;
+          }
 }
-.site-footer .octicon-mark-github {
-    position: absolute;
-    top: 38px;
-    left: 50%;
-    margin-left: -12px;
-    font-size: 24px;
-    color: #c6cbd1;
+
+ul, ol {padding-left: $ul-ol-padding-left;}
+
+.container-lg {
+    max-width:$container-lg-max-width;
+    margin-right: $container-lg-margin-right;
+    margin-left: $container-lg-margin-left;
 }
-ul, ol {
-    padding-left: 0;}
 .container-narrow > hr {
   margin: 30px 0;
 }
 
-.site-footer-links li+li {
-    margin-left: 10px;
-}
-.container-lg {
-    max-width: 1012px;
-    margin-right: auto;
-    margin-left: auto;
-}
+
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
