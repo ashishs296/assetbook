@@ -32,6 +32,23 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-
     $locationProvider.hashPrefix('');
+    }).controller('RootCtrl' , function ($scope,gitService) {
+     
+       $scope.repo = [];
+       $scope.count = 100;
+      $scope.init = function()
+      {
+       //Get meta information about the repository
+       gitService.getIssuesCount().then(getIssuesCountSuccess);
+      }
+     
+      function getIssuesCountSuccess(data) {
+            $scope.repo = data[0];
+                   console.log($scope.repo.open_issues_count);
+            };
+
+      $scope.init(); 
+
+
   });
