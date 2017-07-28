@@ -9,15 +9,17 @@
  */
 angular.module('assetbookApp')
   .controller('MainCtrl', function ($scope,gitService) {
-      $scope.issues = [];
-  
-  gitService.getIssues().then(getIssuesSuccess);
+      $scope.issues = null;
+    this.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  gitService.getIssues().then(addGroupSuccess)
 
-  function getIssuesSuccess(data) {
-
+  function addGroupSuccess(data) {
       $scope.issues = data;
             console.log(data);
 			};
 
- 
   });
