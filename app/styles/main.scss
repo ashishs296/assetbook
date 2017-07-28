@@ -1,5 +1,6 @@
 @import "../partials/footer";
 @import "../partials/header.scss";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
@@ -58,12 +59,12 @@ body {
     border: 1px solid rgba(27,31,35,0.2);
     border-radius: 0.25em;
     -webkit-appearance: none;
-     .octicon {
+   
+}
+
+  img {
     vertical-align: text-top;
 }
-}
-
-
 .btn {
     color: #24292e;
     background-color: #eff3f6;
@@ -138,7 +139,7 @@ padding-bottom: $value;}
         .Counter {
              color: $reponav-item-Counter-color;
         }
-        .octicon {
+        .fa {
                  color: $reponav-item-octicon-color;
                     }
 }
@@ -220,8 +221,62 @@ padding-bottom: $value;}
 .octicon {
     vertical-align: text-bottom;
 }
-.reponav-item:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
-.reponav-item.selected{color:#24292e;background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
+.table-list-header-toggle.states .selected {
+    font-weight: 600;
+}
+.table-list-header-toggle {
+        padding-left: 16px !important;
+        display: inline-block;
+    .select-menu-button {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+                           .select-menu {
+    position: relative;    display: inline-block;
+}
+.btn-link {
+    color: #586069;
+}
+
+}
+
+.table-list-header .btn-link {
+    position: relative;
+    display: inline-block;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-weight: normal;
+}
+.table-list-header {
+    position: relative;
+    margin-top: 20px;
+    background-color: rgb(246, 248, 250);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(225, 228, 232);
+    border-image: initial;
+    border-radius: 3px 3px 0px 0px;
+    .btn-link {
+    position: relative;
+    display: inline-block;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-weight: normal;
+}
+}
+
+
+.link-gray-dark {
+    padding:8px;
+color:$gray-darker;
+
+}
+.link-gray-dark:hover {
+    text-decoration:none;
+color: #0366d6 !important;
+}
+.reponav-item:hover,.reponav-item.fa:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
+.reponav-item.selected,.reponav-item.selected .fa{color:#24292e;background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
 /*end*/
 
 
