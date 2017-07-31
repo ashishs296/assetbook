@@ -88,6 +88,7 @@ body {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 /*header section*/
 @mixin padding($value) {
 padding-top: $value;
@@ -218,6 +219,9 @@ padding-bottom: $value;}
                            }
 
 }
+.issuenumberright{
+    display:none;
+}
 .octicon {
     display: inline-block;
     vertical-align: text-top;
@@ -225,6 +229,7 @@ padding-bottom: $value;}
 }
 .octicon {
     vertical-align: text-bottom;
+    color: rgba(27,31,35,0.3);
 }
 .table-list-header-toggle.states .selected {
     font-weight: 600;
@@ -260,6 +265,7 @@ padding-bottom: $value;}
     border-color: rgb(225, 228, 232);
     border-image: initial;
     border-radius: 3px 3px 0px 0px;
+        border-bottom: none;
     .btn-link {
     position: relative;
     display: inline-block;
@@ -273,16 +279,31 @@ padding-bottom: $value;}
 .link-gray-dark {
     padding:8px;
 color:$gray-darker;
-
+    font-size: 12px;
 }
-
-.link-gray-dark a{color:$gray-darker;}
+.muted-link{
+        font-size: 12px!important;
+}
+.opened-by, .muted-link{
+color: #586069 !important;
+}
+.link-gray-dark a{color:$gray-darker;
+                  font-size:16px;
+}
 .link-gray-dark a:hover {
     text-decoration:none;
 color: #0366d6 !important;
 }
+.fontwt{
+    font-weight: 600;
+}
+.list-group-item .row {
+      margin-left: 0px!important; 
+     margin-right: 0px!important; 
+}
+.selected .fa{    color: rgba(27, 31, 35, 0.3); }
 .reponav-item:hover,.reponav-item.fa:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
-.reponav-item.selected,.reponav-item.selected .fa{color:#24292e;background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
+.reponav-item.selected,.reponav-item.selected .fa{/*color:#24292e;*/background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
 /*end*/
 
 
@@ -301,6 +322,8 @@ color: #0366d6 !important;
 
 }
 .site-footer {
+    width: 94%;
+    margin-left: 3%;
     position: $site-footer-position;
     padding-top:$site-footer-padding-top;
     padding-bottom:$site-footer-padding-bottom;
@@ -396,4 +419,35 @@ ul, ol {padding-left: $ul-ol-padding-left;}
   .jumbotron {
     border-bottom: 0;
   }
+ 
 }
+@media screen and (max-width: 768px) {
+     .repohead h1 { text-align:center; float:none;}
+     .states{ width:100%;}
+    .states .btn-link{ width: 50%; float: left; text-align:center; }
+    .table-list-header-toggle .btn-link + .btn-link {
+     margin-left: 0px; 
+}
+    .issuenumberright{
+    display:block;
+    margin-top: 5px;
+    margin-right: 10px;
+        font-size: 11px;
+}
+    .issuenumberleft, .mobilehideclass, .site-footer-links{
+        display:none;
+    }
+    .link-gray-dark a {
+    font-size: 14px;
+}
+    .table-list-header-toggle.states .selected {
+    border-right: 1px solid #e1e4e8;
+}
+    .site-footer .octicon-mark-github {
+    position: absolute;
+    top: 38px;
+     left: 0%; 
+    font-size: 24px;
+    color: #c6cbd1;
+}
+    }
