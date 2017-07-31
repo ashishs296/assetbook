@@ -85,15 +85,15 @@
                     <div class="float-left pt-2 pl-2"> </div>
                     <div class="float-left col-9 p-2 lh-condensed link-gray-dark">
 
-                        <a href={{issue.html_url}} class="no-underline h4 js-navigation-open">
+                        <a ng-href="#/issue/{{issue.number}}" class="no-underline h4 js-navigation-open">
                             {{issue.title}}
                         </a>
                        
                         <div class="mt-1 text-small text-gray">
                             <span class="opened-by">
                                 #{{issue.number}}
-                                opened <relative-time datetime="2017-07-31T05:27:05Z" title="Jul 31, 2017, 10:57 AM GMT+5:30">35 minutes ago</relative-time> by
-                                <a href="/fullcalendar/fullcalendar/issues?q=is%3Aissue+is%3Aopen+author%3Aarshaw" class="muted-link" title="Open issues created by arshaw">{{issue.user.login}}</a>
+                                opened <span am-time-ago="issue.created_at"></span> by
+                                <a ng-href="{{issue.user.html_url}}" class="muted-link" title="Open issues created by arshaw">{{issue.user.login}}</a>
 
                             </span>
 
