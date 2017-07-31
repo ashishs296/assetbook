@@ -23,5 +23,6 @@ angular.module('assetbookApp')
       $scope.issue = data;
       $scope.issue.body = $scope.issue.body.replace("\r\n","<br />");
             console.log(data);
+			
 			};
   });
