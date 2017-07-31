@@ -16,7 +16,7 @@
                  </div>
 
 
-                 <div class="table-list-header-toggle float-right">
+                 <div class="table-list-header-toggle float-right mobilehideclass">
                      <div class="float-left select-menu js-menu-container js-select-menu" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fauthors_content&amp;q=is%3Aissue+is%3Aopen">
                          <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="u">
                              Author
@@ -83,27 +83,32 @@
                             <i class="fa fa-exclamation-circle text-info" aria-hidden="true"></i>
                         </div>
                     <div class="float-left pt-2 pl-2"> </div>
+                <span class="opened-by issuenumberright float-right">
+                    #{{issue.number}}
+                </span>
                     <div class="float-left col-9 p-2 lh-condensed link-gray-dark">
-
+                       
                         <a ng-href="#/issue/{{issue.number}}" class="no-underline h4 js-navigation-open">
                             {{issue.title}}
                         </a>
                        
                         <div class="mt-1 text-small text-gray">
-                            <span class="opened-by">
+                            <span class="opened-by issuenumberleft">
                                 #{{issue.number}}
-                                opened <span am-time-ago="issue.created_at"></span> by
-                                <a ng-href="{{issue.user.html_url}}" class="muted-link" title="Open issues created by arshaw">{{issue.user.login}}</a>
-
                             </span>
+                                <span class="opened-by">
+                                    opened <span am-time-ago="issue.created_at"></span> by
+                                    <a ng-href="{{issue.user.html_url}}" class="muted-link" title="Open issues created by arshaw">{{issue.user.login}}</a>
+
+                                </span>
 
 
 
 
 
-                            <span class="issue-meta-section css-truncate issue-milestone ml-2">
-                            </span>
-                        </div>
+                                <span class="issue-meta-section css-truncate issue-milestone ml-2">
+                                </span>
+</div>
                     </div>
                  
             </div>
