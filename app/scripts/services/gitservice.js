@@ -15,6 +15,7 @@ angular.module('assetbookApp')
           var service = {
               getIssues: getIssues,
               getIssuesCount : getIssuesCount,
+              getIssue:getIssue,
              // editGroup: editGroup,
             //  deleteGroup: deleteGroup,
              // getAllGroups: getAllGroups
@@ -81,5 +82,28 @@ angular.module('assetbookApp')
               }
           }       
 
+       function getIssue(issuenumber) {
+          var url = "https://api.github.com/repos/aurelia/framework/issues/808";
+
+              var req = {
+                  method: 'GET',
+                  url: url,
+                  headers: {
+                      'Content-Type': "application/json"
+                  }
+              };
+              return $http(req)
+                  .then(aftergettingdata)
+                  .catch(function (message) {
+                      console.log("Error in getAllGroups service");
+                      console.log(message);
+                     // exception.catcher('XHR Failed for get ode')(message);
+                  });
+
+              function aftergettingdata(data, status, headers, config) {
+                 debugger;
+                  return  data.data;
+              }
+          } 
 
   });

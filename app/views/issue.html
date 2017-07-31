@@ -1,1 +1,6 @@
 <p>This is the issue view.</p>
+
+<p>{{issue.title}} # {{issue.number}}</p>
+<p><a ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></p>
+<p><img ng-src="{{issue.user.avatar_url}}" /></p>
+ <p ng-bind-html="issue.body | linky | nl2br"></p>
