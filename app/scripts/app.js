@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angularMoment'
+    'angularMoment',
+    'angular-loading-bar'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -30,11 +31,18 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/issue/', {
+      .when('/issue/:Id', {
         templateUrl: 'views/issue.html',
         controller: 'IssueCtrl',
-        controllerAs: 'issue'
-      })
+        controllerAs: 'issue',
+        resolve: {
+      // I will cause a 1 second delay
+      delay: function($q, $timeout) {
+        var delay = $q.defer();
+        $timeout(delay.resolve, 1000);
+        return delay.promise;
+      }
+      }})
       .otherwise({
         redirectTo: '/'
       });
