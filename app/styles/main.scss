@@ -25,10 +25,15 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+.reponav {
+    position: relative;
+    top: 1px;
+    margin-top: -5px;
+}
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
   margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
@@ -224,14 +229,19 @@ padding-bottom: $value;}
 .table-list-header-toggle.states .selected {
     font-weight: 600;
 }
+.table-list-filters .row{padding:0;margin:0;}
+
 .table-list-header-toggle {
-        padding-left: 16px !important;
-        display: inline-block;
+ 
+        .btn-link+.btn-link {
+    margin-left: 10px;
+}
     .select-menu-button {
     padding-right: 15px;
     padding-left: 15px;
 }
-                           .select-menu {
+                   
+            .select-menu {
     position: relative;    display: inline-block;
 }
 .btn-link {
@@ -240,13 +250,7 @@ padding-bottom: $value;}
 
 }
 
-.table-list-header .btn-link {
-    position: relative;
-    display: inline-block;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    font-weight: normal;
-}
+
 .table-list-header {
     position: relative;
     margin-top: 20px;
@@ -271,7 +275,9 @@ padding-bottom: $value;}
 color:$gray-darker;
 
 }
-.link-gray-dark:hover {
+
+.link-gray-dark a{color:$gray-darker;}
+.link-gray-dark a:hover {
     text-decoration:none;
 color: #0366d6 !important;
 }
