@@ -11,6 +11,7 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "underscore": "^1.8.3",
+    "angular-moment": "^1.0.1"
     "components-font-awesome": "^4.7.0"
   },
   "devDependencies": {
