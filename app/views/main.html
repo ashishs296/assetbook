@@ -1,91 +1,114 @@
 ﻿<div >
+ <div class="table-list-header" id="js-issues-toolbar">
+    
+         <div class="table-list-filters">
+             <div class="row">
+                 <div class="table-list-header-toggle states float-left pl-3">
+                     <a href="" class="btn-link selected">
+                         <i class="fa fa-exclamation-circle " aria-hidden="true"></i>
+                         {{repo.open_issues_count}} Open
+                     </a>
+
+                     <a href="" class="btn-link ">
+                         <i class="fa fa-check" aria-hidden="true"></i>
+                         539 Closed
+                     </a>
+                 </div>
 
 
-    <div class="table-list-header" id="js-issues-toolbar">
-        <div class="table-list-filters">
-            <div class="table-list-header-toggle states float-left pl-3">
-                <a href="" class="btn-link selected">
-                    <i class="fa fa-exclamation-circle " aria-hidden="true"></i>
-                    59 Open
-                </a>
-
-                <a href="" class="btn-link ">
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                    539 Closed
-                </a>
-            </div>
+                 <div class="table-list-header-toggle float-right">
+                     <div class="float-left select-menu js-menu-container js-select-menu" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fauthors_content&amp;q=is%3Aissue+is%3Aopen">
+                         <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="u">
+                             Author
+                         </button>
 
 
-            <div class="table-list-header-toggle float-right">
-                <div class="float-left select-menu js-menu-container js-select-menu" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fauthors_content&amp;q=is%3Aissue+is%3Aopen">
-                    <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="u">
-                        Author
-                    </button>
+                     </div>
 
-         
-                </div>
-
-                <div class="float-left select-menu label-select-menu js-menu-container js-select-menu js-load-contents" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Flabels_content&amp;q=is%3Aissue+is%3Aopen">
-                    <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="l">
-                        Labels
-                    </button>
-
-            
-                </div>
+                     <div class="float-left select-menu label-select-menu js-menu-container js-select-menu js-load-contents" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Flabels_content&amp;q=is%3Aissue+is%3Aopen">
+                         <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="l">
+                             Labels
+                         </button>
 
 
-                <div class="float-left select-menu js-menu-container js-select-menu" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fprojects_content&amp;pulls_only=false&amp;q=is%3Aissue+is%3Aopen">
-                    <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="m">
-                        Projects
-                    </button>
-
-           
-                </div>
+                     </div>
 
 
-                <div class="float-left select-menu js-menu-container js-select-menu js-load-contents" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fmilestones_content&amp;q=is%3Aissue+is%3Aopen">
-                    <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="m">
-                        Milestones
-                    </button>
-
-          
-                </div>
-
-                <div class="float-left select-menu js-menu-container js-select-menu js-load-contents" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fassigns_content&amp;q=is%3Aissue+is%3Aopen">
-                    <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="a">
-                        Assignee
-                    </button>
-
-             
-                </div>
+                     <div class="float-left select-menu js-menu-container js-select-menu" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fprojects_content&amp;pulls_only=false&amp;q=is%3Aissue+is%3Aopen">
+                         <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="m">
+                             Projects
+                         </button>
 
 
-                <div class="float-left select-menu js-menu-container js-select-menu">
-                    <button class="btn-link select-menu-button icon-only js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
-                        Sort<span class="sort-label"></span>
-                    </button>
+                     </div>
 
-               
-                </div>
 
-            </div>
-        </div>
+                     <div class="float-left select-menu js-menu-container js-select-menu js-load-contents" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fmilestones_content&amp;q=is%3Aissue+is%3Aopen">
+                         <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="m">
+                             Milestones
+                         </button>
 
-    </div>
+
+                     </div>
+
+                     <div class="float-left select-menu js-menu-container js-select-menu js-load-contents" data-contents-url="/aurelia/framework/issues/show_menu_content?partial=issues%2Ffilters%2Fassigns_content&amp;q=is%3Aissue+is%3Aopen">
+                         <button class="btn-link select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false" data-hotkey="a">
+                             Assignee
+                         </button>
+
+
+                     </div>
+
+
+                     <div class="float-left select-menu js-menu-container js-select-menu">
+                         <button class="btn-link select-menu-button icon-only js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
+                             Sort<span class="sort-label"></span>
+                         </button>
+
+
+                     </div>
+
+                 </div>
+             </div>
+     </div>
+     </div>
 
 
 
     <ul class="list-group">
         <li class="list-group-item p-0" ng-repeat="issue in issues">
-          
-                <span class="tooltipped" aria-label="Open issue">
-                    <i class="fa fa-exclamation-circle text-info" aria-hidden="true"></i>
-                </span>
-         
-            <a herf="" class="link-gray-dark h5">
-                {{issue.title}}
-            </a>
-        </li>
+            <div class="row">
+               
+                      <div class="float-left pt-2 pl-3" aria-label="Open issue">
+                            <i class="fa fa-exclamation-circle text-info" aria-hidden="true"></i>
+                        </div>
+                    <div class="float-left pt-2 pl-2"> </div>
+                    <div class="float-left col-9 p-2 lh-condensed link-gray-dark">
+
+                        <a href={{issue.html_url}} class="no-underline h4 js-navigation-open">
+                            {{issue.title}}
+                        </a>
+                       
+                        <div class="mt-1 text-small text-gray">
+                            <span class="opened-by">
+                                #{{issue.number}}
+                                opened <relative-time datetime="2017-07-31T05:27:05Z" title="Jul 31, 2017, 10:57 AM GMT+5:30">35 minutes ago</relative-time> by
+                                <a href="/fullcalendar/fullcalendar/issues?q=is%3Aissue+is%3Aopen+author%3Aarshaw" class="muted-link" title="Open issues created by arshaw">{{issue.user.login}}</a>
+
+                            </span>
+
+
+
+
+
+                            <span class="issue-meta-section css-truncate issue-milestone ml-2">
+                            </span>
+                        </div>
+                    </div>
+                 
+            </div>
+                
+            </li>
     </ul>
 </div>
 
