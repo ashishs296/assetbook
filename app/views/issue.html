@@ -24,13 +24,17 @@
     </div>
 
 <div class="timeline-comment-wrapper">
-    <div class="timeline-comment">
-        <span class="timeline-comment-avatar"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
+    <div class="timeline-comment timeline-comment-mobile">
+        <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
         <div class="timeline-comment-header">
             <div class="timeline-comment-actions">
             </div>
             <div>
-                <h5 class="timeline-comment-header-text mobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+                <div class="mobileborder">
+                    <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg mobilecommentimg" ng-src="{{issue.user.avatar_url}}" /></span>
+
+                    <h5 class="timeline-comment-header-text mobiletext commentmobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+                </div>
             </div>
         </div>
         <div class="comment-body-container">

@@ -542,6 +542,18 @@ ul, ol {padding-left: $ul-ol-padding-left;}
     .timeline-comment-avatar {margin-left:0px; }
    .timeline-comment-wrapper { padding-left: 0px; border:none; }
    .timeline-comment { border:none;  }
+   .timeline-comment-mobile{position: relative;
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(209, 213, 218);
+    border-image: initial;
+    border-radius: 3px; }
+   .mobilecommentimg, .commentmobiletext{
+       display:block;
+   }
+   /*.mobileborder{    border-bottom: 1px solid #e1e4e8; }*/
+   .timeline-comment-avatar-mobile{display:block!important;}
    .timeline-comment-header { border-bottom:none; }  
    .comment-body-container{ border-bottom: 1px solid #dfe2e5; }
    }
