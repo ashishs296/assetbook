@@ -301,6 +301,78 @@ color: #0366d6 !important;
       margin-left: 0px!important; 
      margin-right: 0px!important; 
 }
+.timeline-comment-header {
+    padding-right: 15px;
+    padding-left: 15px;
+    color: #586069;
+    background-color: #f6f8fa;
+    border-bottom: 1px solid #d1d5da;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.timeline-comment-header-text {
+    max-width: 78%;
+    font-weight:normal;
+    line-height: 1.5;
+    color: #586069;
+}
+.header-text{
+        padding-top: 4px;
+}
+.comment-body {
+    width: 100%;
+    padding: 15px;
+    overflow: visible;
+    font-size: 14px;
+    text-align:justify;
+}
+.headerlink{font-weight: 600; color: #586069; }
+.timeline-comment-wrapper {
+    position: relative;
+    padding-left: 60px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: relative;
+    float: left;
+    width: 760px;
+}
+.timeline-comment-avatar {
+    float: left;
+    margin-left: -60px;
+    border-radius: 3px;
+}
+.timeline-comment {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+}
+.gh-header-meta {
+    padding-bottom: 20px;
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #586069;
+    border-bottom: 1px solid #e1e4e8;
+}
+.profileimg{height: 44px; width: 44px; }
+.State--green {background-color: #2cbe4e; 
+     margin-right: 8px; }
+.State {
+    font-size: 14px;
+    display: inline-block;
+    padding: 2px 6px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #fff!important;
+    text-align: center;
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",FontAwesome;
+}
+.pcolor{ font-weight: 300; color: #a3aab1; letter-spacing: -1px;font-size:32px;}
+.pfont{font-size:32px;}
 .selected .fa{    color: rgba(27, 31, 35, 0.3); }
 .reponav-item:hover,.reponav-item.fa:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
 .reponav-item.selected,.reponav-item.selected .fa{/*color:#24292e;*/background-color:#fff;border-color:#e36209 #e1e4e8 transparent}
@@ -450,4 +522,21 @@ ul, ol {padding-left: $ul-ol-padding-left;}
     font-size: 24px;
     color: #c6cbd1;
 }
-    }
+    .timeline-comment-wrapper {
+   width:100%;
+}
+    .titleinfo{margin-top:8px; }
+    .pcolor{font-size:16px;}
+    .pfont{font-weight: bold; font-size:16px;}
+    .Statedesktop, .deskimg, .mobiletext{ display:none;}
+    .mobileimg{display:block!important; }
+    .statemobile{ display:inline-block!important;}
+    .timeline-comment-avatar {margin-left:0px; }
+   .timeline-comment-wrapper { padding-left: 0px; border:none; }
+   .timeline-comment { border:none;  }
+   .timeline-comment-header { border-bottom:none; }  
+   .comment-body-container{ border-bottom: 1px solid #dfe2e5; }
+   }
+
+.statemobile{ display:none;}
+ .mobileimg{display:none; }

@@ -1,6 +1,26 @@
-<p>This is the issue view.</p>
+<!--<p>This is the issue view.</p>-->
+<span class="State State--green statemobile"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
+<div class="titleinfo"><span class="pfont">{{issue.title}}</span><span class="pcolor"> #{{issue.number}}</span></div>
+<div class="gh-header-meta">
+    <span class="State State--green Statedesktop float-left"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
+    <span class="timeline-comment-avatar"><img class="profileimg mobileimg" ng-src="{{issue.user.avatar_url}}" /></span>
+    <h5 class="timeline-comment-header-text header-text"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+</div>
+<div class="timeline-comment-wrapper">
+    <div class="timeline-comment">
+        <span class="timeline-comment-avatar"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
+        <div class="timeline-comment-header">
+            <div class="timeline-comment-actions">
+            </div>
+            <div>
+                <h5 class="timeline-comment-header-text mobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+            </div>
+        </div>
+        <div class="comment-body-container">
+            <div class="comment-body" ng-bind-html="issue.body | linky | nl2br">
+            </div>
+        </div>
+    </div>
+    </div>
 
-<p>{{issue.title}} # {{issue.number}}</p>
-<p><a ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></p>
-<p><img ng-src="{{issue.user.avatar_url}}" /></p>
- <p ng-bind-html="issue.body | linky | nl2br"></p>
+   
