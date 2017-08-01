@@ -55,12 +55,12 @@ angular
       {
        //Get meta information about the repository
        gitService.getIssuesCount().then(getIssuesCountSuccess);
-      }
+      };
      
       function getIssuesCountSuccess(data) {
             $scope.repo = data[0];
                    console.log($scope.repo.open_issues_count);
-            };
+            }
 
       $scope.init(); 
 
@@ -69,5 +69,5 @@ angular
   var tag = (/xhtml/i).test(document.doctype) ? '<br />' : '<br>';
   return function(msg) {
     msg = (msg + '').replace(/(\r\n|\n\r|\r|\n|&#10;&#13;|&#13;&#10;|&#10;|&#13;)/g, tag + '$1');
-    return $sanitize(msg);}
+    return $sanitize(msg);};
   }]);
