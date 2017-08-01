@@ -10,22 +10,18 @@
 angular.module('assetbookApp')
   .service('gitService', function ($http) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-
-
           var service = {
               getIssues: getIssues,
               getIssuesCount : getIssuesCount,
               getIssue:getIssue,
-             // editGroup: editGroup,
-            //  deleteGroup: deleteGroup,
-             // getAllGroups: getAllGroups
-          }
+              getIssueComments:getIssueComments
+          };
           return service;
 
           /*GET ALL Issues*/
-          function getIssues() {
-            var opts = {data : '', page :'', username :'',repo:'',state:'',per_page : 100};
-			opts.data = opts.data || [];
+        function getIssues() {
+          var opts = {data : '', page :'', username :'',repo:'',state:'',per_page : 100};
+			    opts.data = opts.data || [];
     		opts.page = opts.page || 1;
     		opts.username = 'aurelia';
     		opts.repo = 'framework';
@@ -102,6 +98,29 @@ angular.module('assetbookApp')
               function aftergettingdata(data, status, headers, config) {
                  return  data.data;
               }
-          } 
+          }
+
+       function getIssueComments(issuenumber) {
+          var url = "https://api.github.com/repos/aurelia/framework/issues/" + issuenumber + "/comments";
+
+              var req = {
+                  method: 'GET',
+                  url: url,
+                  headers: {
+                      'Content-Type': "application/json"
+                  }
+              };
+              return $http(req)
+                  .then(aftergettingdata)
+                  .catch(function (message) {
+                      console.log("Error in getIssue service");
+                      console.log(message);
+                     // exception.catcher('XHR Failed for get ode')(message);
+                  });
+
+              function aftergettingdata(data, status, headers, config) {
+                 return  data.data;
+              }
+          }    
 
   });

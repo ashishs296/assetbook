@@ -8,17 +8,24 @@
  * Controller of the assetbookApp
  */
 angular.module('assetbookApp')
-  .controller('IssueCtrl', function ($scope, $routeParams, $location, $http,gitService) {
-  	debugger;
-  	//$scope.id=;
-   
-
-   gitService.getIssue($routeParams.Id).then(issueSuccess)
-
+  .controller('IssueCtrl', function ($scope, $routeParams, $location, $http,$timeout,gitService) {
   function issueSuccess(data) {
       $scope.issue = data;
-     // $scope.issue.body = $scope.issue.body.replace("\r\n","<br />");
+      if($scope.issue.comments && $scope.issue.comments > 0)
+      {
+
+  $timeout(gitService.getIssueComments($routeParams.Id).then(issueCommentSuccess),200);
+      }
             console.log(data);
 			
-			};
+			}
+  function issueCommentSuccess(data)
+  {
+    $scope.issueComments = data;
+    console.log($scope.issueComments);
+  }    
+
+  gitService.getIssue($routeParams.Id).then(issueSuccess);
+
+
   });
