@@ -4,6 +4,7 @@ This project is generated with [yo angular generator](https://github.com/yeoman/
 version 0.16.0.
 
 ## Build & development
+To build the project, install Node and Python 
 
 Run `grunt` for building and `grunt serve` for preview.
 
