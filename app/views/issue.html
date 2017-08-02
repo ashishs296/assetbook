@@ -21,8 +21,13 @@
                 <div class="discussion-sidebar-heading text-bold">
                     Lables
                 </div>
-                <div class="labels css-truncate">
+                <div ng-if="!issue.labels.length > 0" class="labels css-truncate">
                     None yet
+                   
+                </div>
+                <div ng-if="issue.labels.length > 0" class="labels css-truncate">
+                <a ng-href="https://github.com/aurelia/framework/labels/{{label.name}}" ng-repeat="label in issue.labels" class="label css-truncate-target linked-labelstyle-{{label.color}}" title="enhancement">{{label.name}}</a>
+                
                 </div>
             </div>
             <div class="discussion-sidebar-item">
@@ -38,7 +43,7 @@
                 <div class="discussion-sidebar-heading text-bold">
                     Milestone
                 </div>
-                <span class="css-truncate">
+                <span ng-if="issue.milestone == null" class="css-truncate">
                     No milestone
                 </span>
             </div>
