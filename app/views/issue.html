@@ -1,13 +1,14 @@
 <!--<p>This is the issue view.</p>-->
-<span class="State State--green statemobile"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
-<div class="titleinfo"><span class="pfont"><a class="pfont" ng-href="{{issue.url}}" target="_blank">{{issue.title}}</a></span><span class="pcolor"> #{{issue.number}}</span></div>
-<div class="gh-header-meta">
-    <span class="State State--green Statedesktop float-left"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
-    <span class="timeline-comment-avatar"><img class="profileimg mobileimg" ng-src="{{issue.user.avatar_url}}" /></span>
-    <h5 class="timeline-comment-header-text header-text"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
-</div>
-<div>
-  
+<div ng-if="issue != null">
+    <span class="State State--green statemobile"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
+    <div class="titleinfo"><span class="pfont"><a class="pfont" ng-href="{{issue.html_url}}" target="_blank">{{issue.title}}</a></span><span class="pcolor"> #{{issue.number}}</span></div>
+    <div class="gh-header-meta">
+        <span class="State State--green Statedesktop float-left"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
+        <span class="timeline-comment-avatar"><img class="profileimg mobileimg" ng-src="{{issue.user.avatar_url}}" /></span>
+        <h5 class="timeline-comment-header-text header-text"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+    </div>
+    <div>
+
         <div class="discussion-sidebar">
             <div class="discussion-sidebar-item">
                 <div class="discussion-sidebar-heading text-bold">
@@ -23,11 +24,11 @@
                 </div>
                 <div ng-if="!issue.labels.length > 0" class="labels css-truncate">
                     None yet
-                   
+
                 </div>
                 <div ng-if="issue.labels.length > 0" class="labels css-truncate">
-                <a ng-href="https://github.com/aurelia/framework/labels/{{label.name}}" ng-repeat="label in issue.labels" class="label css-truncate-target linked-labelstyle-{{label.color}}" title="enhancement">{{label.name}}</a>
-                
+                    <a ng-href="https://github.com/aurelia/framework/labels/{{label.name}}" ng-repeat="label in issue.labels" class="label css-truncate-target linked-labelstyle-{{label.color}}" title="enhancement">{{label.name}}</a>
+
                 </div>
             </div>
             <div class="discussion-sidebar-item">
@@ -59,45 +60,46 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="timeline-comment-wrapper">
+            <div class="timeline-comment">
+                <span class="timeline-comment-avatar"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
+                <div class="timeline-comment-header">
+                    <div class="timeline-comment-actions">
+                    </div>
+                    <div>
+                        <h5 class="timeline-comment-header-text mobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+                    </div>
+                </div>
+                <div class="comment-body-container commentbodyimg">
+                    <div class="comment-body" ng-bind-html="issue.body">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="timeline-comment-wrapper">
-        <div class="timeline-comment">
-            <span class="timeline-comment-avatar"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
-            <div class="timeline-comment-header">
+    <div ng-repeat="comment in issueComments" class="timeline-comment-wrapper">
+        <div class="timeline-comment timeline-comment-mobile">
+            <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg" ng-src="{{comment.user.avatar_url}}" /></span>
+            <div class="timeline-comment-header headermobile">
                 <div class="timeline-comment-actions">
                 </div>
                 <div>
-                    <h5 class="timeline-comment-header-text mobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+                    <div class="mobileborder">
+                        <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg mobilecommentimg" ng-src="{{comment.user.avatar_url}}" /></span>
+                        <h5 class="timeline-comment-header-text mobiletext commentmobiletext1"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a><br /> commented <span am-time-ago="comment.created_at"></span></h5>
+                    </div>
+                    <h5 class="timeline-comment-header-text mobiletext commentmobiletext"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a> commented <span am-time-ago="comment.created_at"></span></h5>
+
                 </div>
             </div>
             <div class="comment-body-container">
-                <div class="comment-body" ng-bind-html="issue.body">
+                <div class="comment-body" ng-init="commentbody=getHtmlData(comment.body)" ng-bind-html="commentbody">
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div ng-repeat="comment in issueComments" class="timeline-comment-wrapper">
-    <div class="timeline-comment timeline-comment-mobile">
-        <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg" ng-src="{{comment.user.avatar_url}}" /></span>
-        <div class="timeline-comment-header headermobile">
-            <div class="timeline-comment-actions">
-            </div>
-            <div>
-                <div class="mobileborder">
-                    <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg mobilecommentimg" ng-src="{{comment.user.avatar_url}}" /></span>
-                    <h5 class="timeline-comment-header-text mobiletext commentmobiletext1"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a><br/> commented <span am-time-ago="comment.created_at"></span></h5>
-                </div>
-                <h5 class="timeline-comment-header-text mobiletext commentmobiletext"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a> commented <span am-time-ago="comment.created_at"></span></h5>
-
-            </div>
-        </div>
-        <div class="comment-body-container">
-            <div class="comment-body" ng-init="commentbody=getHtmlData(comment.body)" ng-bind-html="commentbody">
-            </div>
-        </div>
-    </div>
 </div>
-   
