@@ -371,12 +371,32 @@ color: #0366d6 !important;
     border-radius: 3px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",FontAwesome;
 }
-.discussion-sidebar {
+commentmobiletext1{
+    display:none!important;
+}
+.statemobile{ display:none;}
+ .mobileimg{display:none; }
+ .mobileborder{display:none;}
+ .discussion-sidebar {
     top: 0;
     z-index: 21;
     float: right;
-    width: 200px;
+   width: 170px;
+    margin-top: 15px;
 }
+ .discussion-sidebar-item {
+    padding-top: 15px;
+    font-size: 12px;
+    color: #586069;
+    margin-top: 15px;
+    border-top: 1px solid #e6ebf1;
+}
+ .discussion-sidebar-heading{
+     font-weight:bold;
+ }
+ .discussion-sidebar-heading {
+    margin-bottom: 10px;
+    }
 .fa-comment-o{font-size: 16px; }
 .pr-3 { padding-right: 16px !important;}
 .pcolor{ font-weight: 300; color: #a3aab1; letter-spacing: -1px;font-size:32px;}
@@ -502,9 +522,10 @@ ul, ol {padding-left: $ul-ol-padding-left;}
  
 }
 @media screen and (max-width: 768px) {
+    .comment-body ng-binding{display:none;}
      .repohead h1 { text-align:center; float:none;}
      .states{ width:100%;}
-    .states .btn-link{ width: 50%; float: left; text-align:center; }
+    .states .btn-link{ /*width: 50%;*/ float: left; text-align:center; }
     .table-list-header-toggle .btn-link + .btn-link {
      margin-left: 0px; 
 }
@@ -549,14 +570,23 @@ ul, ol {padding-left: $ul-ol-padding-left;}
     border-color: rgb(209, 213, 218);
     border-image: initial;
     border-radius: 3px; }
-   .mobilecommentimg, .commentmobiletext{
+   .mobilecommentimg , .commentmobiletext1{
        display:block;
    }
-   /*.mobileborder{    border-bottom: 1px solid #e1e4e8; }*/
+    .mobilecommentimg{display:block!important;}
    .timeline-comment-avatar-mobile{display:block!important;}
    .timeline-comment-header { border-bottom:none; }  
    .comment-body-container{ border-bottom: 1px solid #dfe2e5; }
+   .comment-body {
+    word-wrap: break-word;
+    }
+   .mobileborder{display:block!important;}
+   .headermobile{
+      border-bottom: 1px solid #dfe2e5;
+   }
+   .discussion-sidebar{display:none;}
    }
 
-.statemobile{ display:none;}
- .mobileimg{display:none; }
+
+
+
