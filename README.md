@@ -8,8 +8,8 @@ To build the project, install Node, bower and Python
 
 once you download the project, goto Project Directory 
 
-Run npm install
-Run bower install
+Run `npm install` 
+Run `bower install`
 
 Run `grunt` for building and `grunt serve` for preview.
 
