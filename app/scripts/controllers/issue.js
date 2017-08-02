@@ -11,6 +11,7 @@ angular.module('assetbookApp')
   .controller('IssueCtrl', function ($scope, $routeParams, $location, $http,$timeout,gitService) {
   function issueSuccess(data) {
       $scope.issue = data;
+      $scope.issue.url = "https://github.com/aurelia/framework/issues/" + $routeParams.Id;
       if($scope.issue.comments && $scope.issue.comments > 0)
       {
 
