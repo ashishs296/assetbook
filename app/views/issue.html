@@ -72,15 +72,13 @@
                 </div>
             </div>
             <div class="comment-body-container">
-                <div class="comment-body" ng-bind-html="issue.body | linky | nl2br">
+                <div class="comment-body" ng-bind-html="issue.body">
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div >
-	{{comment.body}}
-</div>
+
 <div ng-repeat="comment in issueComments" class="timeline-comment-wrapper">
     <div class="timeline-comment timeline-comment-mobile">
         <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg" ng-src="{{comment.user.avatar_url}}" /></span>
@@ -97,7 +95,7 @@
             </div>
         </div>
         <div class="comment-body-container">
-            <div class="comment-body" ng-bind-html="comment.body | linky | nl2br">
+            <div class="comment-body" ng-init="commentbody=getHtmlData(comment.body)" ng-bind-html="commentbody">
             </div>
         </div>
     </div>

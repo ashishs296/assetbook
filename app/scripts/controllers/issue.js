@@ -7,10 +7,15 @@
  * # IssueCtrl
  * Controller of the assetbookApp
  */
+
+  var converter = new showdown.Converter();
 angular.module('assetbookApp')
   .controller('IssueCtrl', function ($scope, $routeParams, $location, $http,$timeout,gitService) {
   function issueSuccess(data) {
       $scope.issue = data;
+     
+   
+       $scope.issue.body = converter.makeHtml($scope.issue.body);
       $scope.issue.url = "https://github.com/aurelia/framework/issues/" + $routeParams.Id;
       if($scope.issue.comments && $scope.issue.comments > 0)
       {
@@ -28,5 +33,9 @@ angular.module('assetbookApp')
 
   gitService.getIssue($routeParams.Id).then(issueSuccess);
 
+$scope.getHtmlData = function(text)
+{
+  return converter.makeHtml(text);
+}
 
   });
