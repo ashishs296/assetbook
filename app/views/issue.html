@@ -6,38 +6,89 @@
     <span class="timeline-comment-avatar"><img class="profileimg mobileimg" ng-src="{{issue.user.avatar_url}}" /></span>
     <h5 class="timeline-comment-header-text header-text"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
 </div>
-<div class="timeline-comment-wrapper">
-    <div class="timeline-comment">
-        <span class="timeline-comment-avatar"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
-        <div class="timeline-comment-header">
-            <div class="timeline-comment-actions">
+<div>
+  
+        <div class="discussion-sidebar">
+            <div class="discussion-sidebar-item">
+                <div class="discussion-sidebar-heading text-bold">
+                    Assignees
+                </div>
+                <span class="css-truncate">
+                    No one assigned
+                </span>
             </div>
-            <div>
-                <h5 class="timeline-comment-header-text mobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+            <div class="discussion-sidebar-item">
+                <div class="discussion-sidebar-heading text-bold">
+                    Lables
+                </div>
+                <div class="labels css-truncate">
+                    None yet
+                </div>
             </div>
-        </div>
-        <div class="comment-body-container">
-            <div class="comment-body" ng-bind-html="issue.body | linky | nl2br">
+            <div class="discussion-sidebar-item">
+                <div class="discussion-sidebar-heading text-bold">
+                    Projects
+                </div>
+                <span class="css-truncate">
+                    None yet
+                </span>
             </div>
-        </div>
-    </div>
+
+            <div class="discussion-sidebar-item">
+                <div class="discussion-sidebar-heading text-bold">
+                    Milestone
+                </div>
+                <span class="css-truncate">
+                    No milestone
+                </span>
+            </div>
+
+            <div id="partial-users-participants" class="discussion-sidebar-item">
+                <div class="participation">
+
+                    <div class="discussion-sidebar-heading text-bold">
+                        1 participant
+                    </div>
+                    <div class="participation-avatars">
+                        <a class="participant-avatar tooltipped tooltipped-n" aria-label="firelizzard18" href="#"><img alt="#" class="avatar" height="26" ng-src="{{issue.user.avatar_url}}" width="26"> </a>
+                    </div>
+                </div>
+            </div>
     </div>
 
+    <div class="timeline-comment-wrapper">
+        <div class="timeline-comment">
+            <span class="timeline-comment-avatar"><img class="profileimg deskimg" ng-src="{{issue.user.avatar_url}}" /></span>
+            <div class="timeline-comment-header">
+                <div class="timeline-comment-actions">
+                </div>
+                <div>
+                    <h5 class="timeline-comment-header-text mobiletext"><a class="headerlink" ng-href="{{issue.user.html_url}}">{{issue.user.login}}</a> opened this issue <span am-time-ago="issue.created_at"></span></h5>
+                </div>
+            </div>
+            <div class="comment-body-container">
+                <div class="comment-body" ng-bind-html="issue.body | linky | nl2br">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div >
 	{{comment.body}}
 </div>
 <div ng-repeat="comment in issueComments" class="timeline-comment-wrapper">
     <div class="timeline-comment timeline-comment-mobile">
         <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg" ng-src="{{comment.user.avatar_url}}" /></span>
-        <div class="timeline-comment-header">
+        <div class="timeline-comment-header headermobile">
             <div class="timeline-comment-actions">
             </div>
             <div>
                 <div class="mobileborder">
                     <span class="timeline-comment-avatar timeline-comment-avatar-mobile"><img class="profileimg deskimg mobilecommentimg" ng-src="{{comment.user.avatar_url}}" /></span>
-
-                    <h5 class="timeline-comment-header-text mobiletext commentmobiletext"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a> commented <span am-time-ago="comment.created_at"></span></h5>
+                    <h5 class="timeline-comment-header-text mobiletext commentmobiletext1"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a><br/> commented <span am-time-ago="comment.created_at"></span></h5>
                 </div>
+                <h5 class="timeline-comment-header-text mobiletext commentmobiletext"><a class="headerlink" ng-href="{{comment.user.html_url}}">{{comment.user.login}}</a> commented <span am-time-ago="comment.created_at"></span></h5>
+
             </div>
         </div>
         <div class="comment-body-container">
