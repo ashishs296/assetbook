@@ -400,7 +400,10 @@ commentmobiletext1{
 .fa-comment-o{font-size: 16px; }
 .pr-3 { padding-right: 16px !important;}
 .pcolor{ font-weight: 300; color: #a3aab1; letter-spacing: -1px;font-size:32px;}
-.pfont{font-size:32px;}
+.pfont{font-size:32px;text-decoration:none;}
+.pfont a{ color: #24292e!important;text-decoration:none;}
+.pfont:hover{text-decoration:none;}
+.pfont a:hover{ color: #24292e!important;text-decoration:none;}
 .selected .fa{    color: rgba(27, 31, 35, 0.3); }
 .reponav-item:hover,.reponav-item.fa:hover,.reponav-item:focus{color:#24292e;text-decoration:none}
 .reponav-item.selected,.reponav-item.selected .fa{/*color:#24292e;*/background-color:#fff;border-color:#e36209 #e1e4e8 transparent}

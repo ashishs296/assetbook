@@ -1,6 +1,6 @@
 <!--<p>This is the issue view.</p>-->
 <span class="State State--green statemobile"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
-<div class="titleinfo"><span class="pfont">{{issue.title}}</span><span class="pcolor"> #{{issue.number}}</span></div>
+<div class="titleinfo"><span class="pfont"><a class="pfont" ng-href="{{issue.url}}" target="_blank">{{issue.title}}</a></span><span class="pcolor"> #{{issue.number}}</span></div>
 <div class="gh-header-meta">
     <span class="State State--green Statedesktop float-left"><i class="fa fa-exclamation-circle State" aria-hidden="true"> Open </i></span>
     <span class="timeline-comment-avatar"><img class="profileimg mobileimg" ng-src="{{issue.user.avatar_url}}" /></span>
