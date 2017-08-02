@@ -95,8 +95,12 @@
                     <div class="float-left col-9 p-2 lh-condensed link-gray-dark">
                        
                         <a ng-href="#/issue/{{issue.number}}" class="no-underline h4 js-navigation-open">
-                            {{issue.title}}
-                        </a>
+                            {{issue.title}} {{issue.labels.length}}
+                        </a><span ng-if="issue.labels.length > 0" class="labels">
+                        <a ng-href="#" ng-repeat="label in issue.labels"  class="label v-align-text-top labelstyle-{{label.color}} linked-labelstyle-{{label.color}}">{{label.name}}</a>
+                        {{issue.labels}}
+            
+        </span>
                        
                         <div class="mt-1 text-small text-gray">
                             <span class="opened-by issuenumberleft">
